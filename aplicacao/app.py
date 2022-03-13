@@ -1,11 +1,11 @@
-from crypt import methods
+#from crypt import methods
 from flask import Flask, render_template, url_for, redirect, request
 from aplicacao.forms import formArtigo, formCategoria
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from aplicacao import config
 from werkzeug.utils import secure_filename
-from os import listdir
+
 
 app = Flask(__name__)
 app.config.from_object(config)
