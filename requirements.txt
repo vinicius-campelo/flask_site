@@ -1,0 +1,6 @@
+flask
+flask-Script==2.0.3
+flask-Bootstrap
+flask-WTF
+flask-SQLAlchemy
+

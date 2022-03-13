@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Tienda de Videojuegos{% endblock %}
+{% block conteudo %}
+
+    <h3>Categorias</h3>
+    <br>
+    <a class="btn btn-primary" href="{{url_for('categorias_new')}}" role="button">Nova Categoria</a>
+    <br><br>
+    <div class="panel panel-default">
+        <div class="panel-heading">Resultado</div>
+        <table class="table table-hover">
+            {% for cat in categorias %}
+            <tr>
+              <td>{{cat.nome}}</td>
+            </tr>
+            {% endfor %}
+      </table>
+    </div>
+{% endblock %}
+ 	

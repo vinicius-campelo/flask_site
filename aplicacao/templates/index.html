@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} Inicio {% endblock %}
+{% block conteudo  %}
+<br>
+
+    <h3>Jogos</h3>
+    <div class="panel panel-default">
+        <div class="panel-heading">Resultado</div>
+        <table class="table table-hover">
+            {% for art in artigos %}
+            <tr>
+                <td>{{ art.nome }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+<br>
+
+
+
+{% endblock %}

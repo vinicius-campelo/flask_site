@@ -1,0 +1,41 @@
+{% extends "bootstrap/base.html" %}
+{% block navbar %}
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Formulario de vendas</a>
+        </div>
+        
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Formularios</h1>
+        <p>Trabalhando com formulario de vendas do curso de FLASK python.</p>
+        
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+  	<div class="col-md-2"></div>
+  	<div class="col-md-8">
+	    {% block conteudo %}{% endblock %}
+  	</div>
+  </div>
+</div>
+    
+    
+{% endblock %}
