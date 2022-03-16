@@ -1,5 +1,5 @@
 from sqlalchemy import Boolean, Column, ForeignKey
-from sqlalchemy import DateTime, Integer, String, Text, Float
+from sqlalchemy import Integer, String, Float
 from sqlalchemy.orm import relationship
 from aplicacao.app import db
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -12,7 +12,7 @@ class Categorias(db.Model):
     artigos = relationship("Artigos", backref="Categorias", lazy='dynamic')
 
     def __repr__(self):
-        return (u'<{self.__class__.__name__}: {self.id}>'.format(self=self))
+        return u'<{self.__class__.__name__}: {self.id}>'.format(self=self)
 
 
 class Artigos(db.Model):
@@ -31,7 +31,7 @@ class Artigos(db.Model):
         return self.preco+(self.preco*self.iva/100)
 
     def __repr__(self):
-        return (u'<{self.__class__.__name__}: {self.id}>'.format(self=self))
+        return u'<{self.__class__.__name__}: {self.id}>'.format(self=self)
 
 
 class Usuarios(db.Model):
@@ -45,7 +45,7 @@ class Usuarios(db.Model):
     admin = Column(Boolean, default=False)
 
     def __repr__(self):
-        return (u'<{self.__class__.__name__}: {self.id}>'.format(self=self))
+        return u'<{self.__class__.__name__}: {self.id}>'.format(self=self)
 
     @property
     def password(self):
@@ -54,5 +54,6 @@ class Usuarios(db.Model):
     @password.setter
     def password(self, password):
         self.password_hash = generate_password_hash(password)
+
     def verify_password(self, password):
         return check_password_hash(self.password_hash, password)

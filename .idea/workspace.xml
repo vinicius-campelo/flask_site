@@ -5,33 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c32fef9a-b9ef-4e09-b4b6-a8889130f746" name="Changes" comment="atualizar">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aplicacao/login.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aplicacao/static/css/artigo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/550a08d1a5131.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/550c16d87ca1c.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/551c59cc7db40.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/551f45e525975.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/552ab11dd961a.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/55687880007ac.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/Baterias.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/not-found.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/sapato_01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aplicacao/templates/artigos_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aplicacao/templates/artigos_new.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aplicacao/templates/categorias_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/templates/changepassword.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/templates/usuario_new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aplicacao/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aplicacao/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aplicacao/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aplicacao/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aplicacao/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aplicacao/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aplicacao/templates/categorias.html" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/templates/categorias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aplicacao/templates/categorias_new.html" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/templates/categorias_new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aplicacao/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbase.db" beforeDir="false" afterPath="$PROJECT_DIR$/dbase.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -54,6 +43,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/requirements.txt" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -64,6 +56,7 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
@@ -95,7 +88,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -116,11 +109,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.manage" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -202,34 +190,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>8</line>
+          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
+          <line>196</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
-          <line>56</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
-          <line>55</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
-          <line>60</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
-          <line>62</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
-          <line>118</line>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

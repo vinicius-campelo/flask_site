@@ -17,7 +17,9 @@
 
         </div>
         <br/>
-        <a class="btn btn-primary" href="{{url_for('artigos_new')}}" role="button">Inserir Novo Jogo</a>
+           {% if is_admin %}
+                <a class="btn btn-primary" href="{{url_for('artigos_new')}}" role="button">Inserir Novo Jogo</a>
+           {% endif %}
         <br/>
       </div>
 
@@ -25,13 +27,17 @@
         <h3>Jogos ({{categoria.nome}})</h3>
         <div class="panel panel-default">
 
-            <table class="table table-hover">
+            <table class="table-bordered">
                 <tr>
                     <th></th>
                     <th>Nome</th>
                     <th>Descrição</th>
                     <th>PVP</th>
+                    {% if is_admin %}
+                    <th>Modifica</th>
+                    <th>Deleta</th>
                     <th>Compra</th>
+                     {% endif %}
                 </tr>
                 {% for art in artigos %}
                 <tr>
@@ -43,9 +49,13 @@
                     <td>{{ art.nome }}</td>
                     <td>{{art.descricao}}</td>
                     <td>{{art.preco}}</td>
-                    <td><a href="{{url_for('artigos_edit',id=art.id)}}"><span class="glyphicon glyphicon-pencil"></span> Modificar</a></td>
-                    <td><a href="{{url_for('artigos_delete',id=art.id)}}"><span class="glyphicon glyphicon-trash"></span> Deletar</a></td>
-                    <td><a href="#"><span class="glyphicon glyphicon-shopping-cart" ></span> Comprar</a></td>
+                    {% if is_admin %}
+                        <td><a href="{{url_for('artigos_edit',id=art.id)}}"><span class="glyphicon glyphicon-pencil"></span> Modificar</a></td>
+                        <td><a href="{{url_for('artigos_delete',id=art.id)}}"><span class="glyphicon glyphicon-trash"></span> Deletar</a></td>
+                     {% endif %}
+                     {% if is_login %}
+                        <td><a href="#"><span class="glyphicon glyphicon-shopping-cart" ></span> Comprar</a></td>
+                     {% endif %}
                 </tr>
                 {% endfor %}
             </table>
