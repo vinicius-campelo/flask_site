@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}delete artigos{% endblock %}
+{% block conteudo %}
+<div class="container">
+  <div class="row">
+    <h3>Deletar Artigo</h3>
+    <p>Esta certo disso: {{art.nome}}</p>
+      <form class="form-horizontal" method="post">
+        <div class="form-group">
+          {{ form.csrf_token }}
+          {{form.sim(class="btn btn-primary") }} {{form.nao(class="btn btn-primary")}}<br/><br/>
+        </div>
+          
+    </form>
+  </div>
+</div>
+ 	
+  
+{% endblock %}

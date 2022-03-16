@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c32fef9a-b9ef-4e09-b4b6-a8889130f746" name="Changes" comment="atualizar">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/login.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/static/css/artigo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/550a08d1a5131.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/550c16d87ca1c.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/551c59cc7db40.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/551f45e525975.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/552ab11dd961a.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/55687880007ac.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/Baterias.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/not-found.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/static/img/sapato_01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/templates/artigos_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/templates/artigos_new.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/templates/categorias_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aplicacao/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aplicacao/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aplicacao/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aplicacao/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aplicacao/templates/categorias.html" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/templates/categorias.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aplicacao/templates/categorias_new.html" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/templates/categorias_new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aplicacao/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbase.db" beforeDir="false" afterPath="$PROJECT_DIR$/dbase.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="26Nc1KogR67HoCIlRl1EETCJJxH" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RunManager" selected="Python.manage">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\VINICIUS\Documents\Doc_vinicius\Projetos_python\flask_site\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.manage" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c32fef9a-b9ef-4e09-b4b6-a8889130f746" name="Changes" comment="" />
+      <created>1647267272406</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1647267272406</updated>
+    </task>
+    <task id="LOCAL-00001" summary="atualizar">
+      <created>1647271170498</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1647271170498</updated>
+    </task>
+    <task id="LOCAL-00002" summary="atualizar">
+      <created>1647271252916</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1647271252916</updated>
+    </task>
+    <task id="LOCAL-00003" summary="atualizar">
+      <created>1647275103078</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1647275103078</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="atualizar" />
+    <option name="LAST_COMMIT_MESSAGE" value="atualizar" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
+          <line>56</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
+          <line>55</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
+          <line>60</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
+          <line>62</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
+          <line>118</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

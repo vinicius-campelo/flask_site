@@ -1,10 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}Tienda de Videojuegos{% endblock %}
+{% block conteudo %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/artigo.css')}}">
+<div class="container">
+  <div class="col-md-2"></div>
+  <div class="col-md-6">
+    <h3>Novo jogo</h3>
+    {% for field, errors in form.errors.items() %}
+      <div class="alert alert-danger">
+        {{ form[field].label }}: {{ ', '.join(errors) }}
+      </div>
+    {% endfor %}
+      <form class="form-horizontal" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          {{ form.csrf_token }}
+          {{form.nome.label() }}{{form.nome(size="100",class="form-control")}}<br/>
+        </div>
+        <div class="form-group">
+          {{form.preco.label() }}{{form.preco(size="10",class="form-control")}}<br/>
+        </div>
+        <div class="form-group">
+          {{form.iva.label() }}{{form.iva(size="10",class="form-control")}}<br/>
+        </div>
+        <div class="form-group">
+          {{form.foto.label() }}{{form.foto()}}<br/>
+        </div>
+        <div class="form-group">
+          {{form.stock.label() }}{{form.stock(size="10",class="form-control")}}<br/>
+        </div>
+        <div class="form-group">
+          {{form.descricao.label() }}<br/>{{form.descricao(rows="20",cols="0",class="form-control")}}<br/>
+        </div>
+        <div class="form-group">
+          {{form.CategoriaId.label() }}{{form.CategoriaId(class="form-control")}}<br/>
+        </div>
+
+          {{form.submit(class="btn btn-lg btn-primary btn-block")}}
+
+    </form>
+    <br/>
+  </div>
+</div>
+ 	
+  
+{% endblock %}

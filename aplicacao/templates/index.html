@@ -1,22 +1,57 @@
-{% extends "base.html" %}
-{% block title %} Inicio {% endblock %}
-{% block conteudo  %}
-<br>
+    {% extends "base.html" %}
+    {% block title %} Inicio {% endblock %}
+    {% block conteudo  %}
+    <div class="container">
+      <div class="row">
+      <div class="col-md-2">
+        <h3>Categorias...</h3>
+        <div class="list-group">
 
-    <h3>Jogos</h3>
-    <div class="panel panel-default">
-        <div class="panel-heading">Resultado</div>
-        <table class="table table-hover">
-            {% for art in artigos %}
-            <tr>
-                <td>{{ art.nome }}</td>
-            </tr>
-            {% endfor %}
-        </table>
+          {% for cat in categorias %}
+          {% if categoria.nome==cat.nome %}
+            <a class="list-group-item active" href='{{url_for("index",id=cat.id)}}'>{{cat.nome}}</a>
+          {% else %}
+            <a class="list-group-item" href='{{url_for("index", id=cat.id)}}'>{{cat.nome}}</a>
+          {% endif%}
+          {% endfor %}
+
+        </div>
+        <br/>
+        <a class="btn btn-primary" href="{{url_for('artigos_new')}}" role="button">Inserir Novo Jogo</a>
+        <br/>
+      </div>
+
+     <div class="col-md-10">
+        <h3>Jogos ({{categoria.nome}})</h3>
+        <div class="panel panel-default">
+
+            <table class="table table-hover">
+                <tr>
+                    <th></th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>PVP</th>
+                    <th>Compra</th>
+                </tr>
+                {% for art in artigos %}
+                <tr>
+                    {% if art.image %}
+                        <td><img style="width:40px; height:50px;" src="{{url_for('static', filename='img/')}}{{art.image}}"/></td>
+                    {% else %}
+                        <td><img style="width:30px; height:40px;" src="{{url_for('static',filename='img/not-found.jpg')}}"/>
+                    {% endif %}
+                    <td>{{ art.nome }}</td>
+                    <td>{{art.descricao}}</td>
+                    <td>{{art.preco}}</td>
+                    <td><a href="{{url_for('artigos_edit',id=art.id)}}"><span class="glyphicon glyphicon-pencil"></span> Modificar</a></td>
+                    <td><a href="{{url_for('artigos_delete',id=art.id)}}"><span class="glyphicon glyphicon-trash"></span> Deletar</a></td>
+                    <td><a href="#"><span class="glyphicon glyphicon-shopping-cart" ></span> Comprar</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+     </div>
+      </div>
     </div>
 
-<br>
-
-
-
-{% endblock %}
+    {% endblock %}

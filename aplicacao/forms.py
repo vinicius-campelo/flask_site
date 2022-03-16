@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, DecimalField, IntegerField, TextAreaField, SelectField
 from flask_wtf.file import FileField
-from wtforms.validators import InputRequired
+from wtforms.validators import InputRequired, PasswordField
 
 class formCategoria(FlaskForm):
     nome = StringField("Nome:", validators=[InputRequired("Adicione o nome!")])
@@ -17,3 +17,12 @@ class formArtigo(FlaskForm):
     stock = IntegerField("Stock:", default=21, validators=[InputRequired("Adicione um valor")])
     CategoriaId=SelectField("Categoria:", coerce=int)
     submit = SubmitField('Enviar')
+
+class formSIMNAO(FlaskForm):
+    sim = SubmitField('Sim')
+    nao = SubmitField('Não')
+
+class loginForm(FlaskForm):
+    usuario = StringField('Usuario', validators=[InputRequired()])
+    senha = PasswordField('Senha', validators=[InputRequired()])
+    submit = SubmitField('Logar')
