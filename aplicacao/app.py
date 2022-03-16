@@ -1,10 +1,8 @@
-#from crypt import methods
-from crypt import methods
-from flask import Flask, render_template, url_for, redirect, request, abort
-from aplicacao.forms import formArtigo, formCategoria, formSIMNAO, loginForm
+from flask import Flask, render_template,redirect,url_for,request,abort
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from aplicacao import config
+from aplicacao.forms import formCategoria, formArtigo,formSIMNAO, loginForm
 from werkzeug.utils import secure_filename
 from flask_wtf.csrf import CSRFProtect
 import os
@@ -12,9 +10,8 @@ import os
 
 app = Flask(__name__)
 app.config.from_object(config)
+csrf = CSRFProtect(app)
 Bootstrap(app)
-csrf = CSRFProtect()
-csrf.init_app(app)
 db = SQLAlchemy(app)
 
 from aplicacao.model import Artigos, Categorias, Usuarios
@@ -164,8 +161,9 @@ def artigos_delete(id):
 def login():
     form = loginForm()
     if form.validate_on_submit():
-        user=Usuarios.query.filter_by(username=form.usuario.data).fist()
-        if user!=None and user.verify_password(form.senha.data):
+        user=Usuarios.query.filter_by(username=form.usuario.data).first()
+        #if user and verify(form.senha.data) == True:
+        if user and user.verify_password(form.senha.data):
             login_user(user)
             return redirect(url_for('index'))
         

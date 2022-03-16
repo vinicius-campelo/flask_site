@@ -1,12 +1,21 @@
-# This is a sample Python script.
+import sqlite3
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+connection = sqlite3.connect('dbase.db')
+c = connection.cursor()
 
 
-# def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    # print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def create_table():
+    c.execute('CREATE TABLE IF NOT EXISTS usuarios (id INTEGER UNIQUE, username TEXT NOT NULL, password_hash TEXT NOT NULL, nome TEXT NOT NULL, email TEXT NOT NULL, admin INTEGER DEFAULT 0, PRIMARY KEY(id AUTOINCREMENT))')
+
+create_table()
+
+
+def data_values():
+    c.execute("INSERT INTO usuarios (username, password_hash, nome, email, admin) VALUES ('campelo', '260000$Nso4Os2lGQ8Rcfd0$1a24a3b145cb174b4de612d30ef24cd008390369846779fb871554d1105dd9b5', 'vinicius Campelo', 'autanbr@gmail.com', 0)")
+    connection.commit()
+
+data_values()
+
 
 
 # Press the green button in the gutter to run the script.

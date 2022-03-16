@@ -36,7 +36,7 @@ class Artigos(db.Model):
 
 class Usuarios(db.Model):
     """Usuarios"""
-    __tablename = 'usuarios'
+    __tablename__ = 'usuarios'
     id = Column(Integer, primary_key=True)
     username = Column(String(100), nullable=False)
     password_hash = Column(String(128), nullable=False)

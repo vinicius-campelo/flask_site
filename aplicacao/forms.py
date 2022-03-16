@@ -1,7 +1,8 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, DecimalField, IntegerField, TextAreaField, SelectField
+from wtforms import StringField,SubmitField,DecimalField,IntegerField,TextAreaField,SelectField,PasswordField
 from flask_wtf.file import FileField
-from wtforms.validators import InputRequired, PasswordField
+from wtforms.validators import InputRequired
+
 
 class formCategoria(FlaskForm):
     nome = StringField("Nome:", validators=[InputRequired("Adicione o nome!")])
