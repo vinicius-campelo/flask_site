@@ -97,5 +97,7 @@ def create_admin():
 
 
 if __name__ == '__main__':
-    manager.run()
-    # app.run()
+    #manager.run()
+
+    
+    app.run()
