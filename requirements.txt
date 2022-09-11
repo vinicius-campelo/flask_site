@@ -4,6 +4,7 @@ flask-Bootstrap
 flask-WTF
 flask-SQLAlchemy
 WTForms==2.3.3
-
 Werkzeug~=2.0.3
 SQLAlchemy~=1.4.32
+Flask-Login
+PyMySQL==0.7.11

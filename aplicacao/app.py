@@ -1,8 +1,11 @@
-from flask import Flask, render_template, redirect, url_for, request, abort, session
+import json
+
+from flask import Flask, render_template, redirect, url_for, request, abort, session, make_response
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from aplicacao import config
-from aplicacao.forms import FormCategoria, FormArtigo, FormSIMNAO, LoginForm, FormUsuario, FormChangePassword
+from aplicacao.forms import FormCategoria, FormArtigo, FormSIMNAO, LoginForm, FormUsuario, FormChangePassword, FormCarrinhoDeCompras
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from werkzeug.utils import secure_filename
 from flask_wtf.csrf import CSRFProtect
 import os
@@ -13,10 +16,14 @@ Bootstrap(app)
 csrf = CSRFProtect(app)
 db = SQLAlchemy(app)
 
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
+
 from aplicacao.model import Artigos, Categorias, Usuarios
-from aplicacao.login import login_user, logout_user, is_login, is_admin
 
 
+# from aplicacao.login import login_user, logout_user, is_login, is_admin
 
 
 @app.route('/categorias')
@@ -38,9 +45,10 @@ def index(id='0'):
 
 
 @app.route("/categorias/new/", methods=["GET", "POST"])
+@login_required
 def categorias_new():
-    #controle de permissão
-    if not is_admin():
+    # controle de permissão
+    if not current_user.is_admin():
         abort(404)
 
     form = FormCategoria(request.form)
@@ -55,8 +63,9 @@ def categorias_new():
 
 
 @app.route('/categorias/<id>/edit', methods=['GET', 'POST'])
+@login_required
 def categorias_edit(id):
-    if not is_admin():
+    if not current_user.is_admin():
         abort(404)
 
     cat = Categorias.query.get(id)
@@ -76,8 +85,9 @@ def categorias_edit(id):
 
 
 @app.route('/categorias/<id>/delete', methods=["get", "post"])
+@login_required
 def categorias_delete(id):
-    if not is_admin():
+    if not current_user.is_admin():
         abort(404)
 
     cat = Categorias.query.get(id)
@@ -93,8 +103,9 @@ def categorias_delete(id):
 
 
 @app.route('/artigos/new/', methods=['GET', 'POST'])
+@login_required
 def artigos_new():
-    if not is_admin():
+    if not current_user.is_admin():
         abort(404)
 
     form = FormArtigo()
@@ -118,8 +129,9 @@ def artigos_new():
 
 
 @app.route('/artigos/<id>/edit', methods=["GET", "POST"])
+@login_required
 def artigos_edit(id):
-    if not is_admin():
+    if not current_user.is_admin():
         abort(404)
 
     art = Artigos.query.get(id)
@@ -152,8 +164,9 @@ def artigos_edit(id):
 
 
 @app.route('/artigos/<id>/delete', methods=['GET', 'POST'])
+@login_required
 def artigos_delete(id):
-    if not is_admin():
+    if not current_user.is_admin():
         abort(404)
 
     art = Artigos.query.get(id)
@@ -173,7 +186,7 @@ def artigos_delete(id):
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if is_login():
+    if current_user.is_authenticated:
         return redirect(url_for("index"))
 
     form = LoginForm()
@@ -195,12 +208,12 @@ def logout():
 
 @app.route('/registro', methods=['GET', 'POST'])
 def registro():
-    if is_login():
+    if current_user.is_authenticated:
         return redirect(url_for("index"))
 
     form = FormUsuario()
     if form.validate_on_submit():
-        existe_usuario = Usuarios.query.filter_by(username=form.usuario.data).first()
+        existe_usuario = Usuarios.query.filter_by(username=form.username.data).first()
         if existe_usuario is None:
             user = Usuarios()
             form.populate_obj(user)
@@ -213,13 +226,12 @@ def registro():
 
 
 @app.route('/perfil/<username>', methods=['GET', 'POST'])
+@login_required
 def perfil(username):
-    if not is_login():
-        abort(404)
-
     user = Usuarios.query.filter_by(username=username).first()
     if user is None:
         abort(404)
+
     form = FormUsuario(request.form, obj=user)
     del form.password
     if form.validate_on_submit():
@@ -230,19 +242,111 @@ def perfil(username):
 
 
 @app.route('/changepassword/<username>', methods=['GET', 'POST'])
+@login_required
 def changepassword(username):
-    if not is_login():
-        abort(404)
-
     user = Usuarios.query.filter_by(username=username).first()
     if user is None:
         abort(404)
+
     form = FormChangePassword()
     if form.validate_on_submit():
         form.populate_obj(user)
         db.session.commit()
         return redirect(url_for('index'))
     return render_template('changepassword.html', form=form)
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return Usuarios.query.get(int(user_id))
+
+
+@app.route('/carrinho/add/<id>', methods=['GET', 'POST'])
+@login_required
+def carrinho_add(id):
+    art = Artigos.query.get(id)
+    form = FormCarrinhoDeCompras()
+    form.id.data = id
+    if form.validate_on_submit():
+        if art.stock >= int(form.quantidade.data):
+            try:
+                dados_de_carrinho = json.loads(request.cookies.get(str(current_user.id)))
+            except:
+                dados_de_carrinho = []
+            atualizar = False
+            for dado in dados_de_carrinho:
+                if dado['id'] == id:
+                    dado['quantidade'] = form.quantidade.data
+                    atualizar = True
+            if not atualizar:
+                dados_de_carrinho.append({'id': form.id.data, 'quantidade': form.quantidade.data})
+            resp = make_response(redirect(url_for('index')))
+            resp.set_cookie(str(current_user.id), json.dumps(dados_de_carrinho))
+            return resp
+        form.quantidade.errors.append('Não tem produtos suficiente.')
+    return render_template('carrinho_add.html', form=form, art=art)
+
+
+@app.route('/carrinho')
+@login_required
+def carrinho():
+    try:
+        dados_de_carrinho = json.loads(request.cookies.get(str(current_user.id)))
+    except:
+        dados_de_carrinho = []
+    artigos = []
+    quantidade = []
+    total = 0
+    for artigo in dados_de_carrinho:
+        artigos.append(Artigos.query.get(artigo['id']))
+        quantidade.append(artigo['quantidade'])
+        total = total+Artigos.query.get(artigo['id']).preco*artigo['quantidade']
+    artigos = zip(artigos, quantidade)
+    return render_template('carrinho.html', artigos=artigos, total=total)
+
+
+@app.route('/carrinho_delete/<id>')
+@login_required
+def carrinho_delete(id):
+    try:
+        dados_de_carrinho = json.loads(request.cookies.get(str(current_user.id)))
+    except:
+        dados_de_carrinho = []
+    dados_novos = []
+    for dado in dados_de_carrinho:
+        if dado['id'] != id:
+            dados_novos.append(dado)
+    resp = make_response(redirect(url_for('carrinho')))
+    resp.set_cookie(str(current_user.id), json.dumps(dados_novos))
+    return resp
+
+
+@app.context_processor
+def conta_carrinho():
+    if not current_user.is_authenticated:
+        return {'numero_do_artigo': 0}
+    if request.cookies.get(str(current_user.id)) is None:
+        return {'numero_do_artigo': 0}
+    else:
+        dados = json.loads(request.cookies.get(str(current_user.id)))
+        return {'numero_do_artigo': len(dados)}
+
+
+@app.route('/pedido')
+@login_required
+def pedido():
+    try:
+        dados_de_carrinho = json.loads(request.cookies.get(str(current_user.id)))
+    except:
+        dados_de_carrinho = []
+    total = 0
+    for artigo in dados_de_carrinho:
+        total = total+Artigos.query.get(artigo['id']).preco*artigo['quantidade']
+        Artigos.query.get(artigo['id']).stock-=artigo['quantidade']
+        db.session.commit()
+    resp = make_response(render_template('pedido.html', total=total))
+    resp.set_cookie(str(current_user.id), "", expires=0)
+    return resp
 
 
 @app.errorhandler(404)

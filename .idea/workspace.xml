@@ -5,20 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c32fef9a-b9ef-4e09-b4b6-a8889130f746" name="Changes" comment="atualizar">
-      <change afterPath="$PROJECT_DIR$/aplicacao/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aplicacao/templates/changepassword.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aplicacao/templates/usuario_new.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/templates/carrinho.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/templates/carrinho_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aplicacao/templates/pedido.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aplicacao/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aplicacao/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aplicacao/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aplicacao/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/login.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aplicacao/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aplicacao/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aplicacao/templates/categorias.html" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/templates/categorias.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aplicacao/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/aplicacao/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbase.db" beforeDir="false" afterPath="$PROJECT_DIR$/dbase.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbase.db-journal" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
@@ -140,8 +139,18 @@
       <option name="project" value="LOCAL" />
       <updated>1647275103078</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="atualizar">
+      <created>1647470999862</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1647470999862</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.config" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -191,8 +200,58 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
-          <line>196</line>
+          <line>209</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
+          <line>265</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
+          <line>266</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
+          <line>291</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
+          <line>309</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
+          <line>324</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
+          <line>336</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
+          <line>292</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
+          <line>325</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
+          <line>337</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aplicacao/app.py</url>
+          <line>310</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

@@ -1,8 +1,8 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,SubmitField, DecimalField, IntegerField, TextAreaField, SelectField, PasswordField
+from wtforms import StringField, SubmitField, DecimalField, IntegerField, TextAreaField, SelectField, PasswordField, HiddenField
 from wtforms.fields.html5 import EmailField
 from flask_wtf.file import FileField
-from wtforms.validators import InputRequired
+from wtforms.validators import InputRequired, NumberRange
 
 
 class FormCategoria(FlaskForm):
@@ -17,7 +17,7 @@ class FormArtigo(FlaskForm):
     descricao = TextAreaField("Descricao:")
     foto = FileField("Selecione uma Imagem:")
     stock = IntegerField("Stock:", default=21, validators=[InputRequired("Adicione um valor")])
-    CategoriaId=SelectField("Categoria:", coerce=int)
+    CategoriaId = SelectField("Categoria:", coerce=int)
     submit = SubmitField('Enviar')
 
 
@@ -42,4 +42,10 @@ class FormUsuario(FlaskForm):
 
 class FormChangePassword(FlaskForm):
     password = PasswordField('Password', validators=[InputRequired()])
+    submit = SubmitField('Enviar')
+
+
+class FormCarrinhoDeCompras(FlaskForm):
+    id = HiddenField()
+    quantidade = IntegerField('Quantidade', default=1, validators=[NumberRange(min=1, message="Deve ser um numero positivo"), InputRequired("Deve inserir um valor")])
     submit = SubmitField('Enviar')

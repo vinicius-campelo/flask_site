@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Pedidos{% endblock %}
+{% block conteudo %}
+<div class="container">
+  <div class="row">
+  
+    <h3>Obrigadop por comprar conosco!</h3>
+    <h2>Valor: {{total}}</h2>
+      <a class="btn btn-primary" href="{{url_for('index')}}" role="button">Finalizar</a>
+
+  </div>
+</div>
+ 	
+  
+{% endblock %}

@@ -17,7 +17,7 @@
 
         </div>
         <br/>
-           {% if is_admin %}
+            {% if current_user.is_authentificated and current_user.is_admin() %}
                 <a class="btn btn-primary" href="{{url_for('artigos_new')}}" role="button">Inserir Novo Jogo</a>
            {% endif %}
         <br/>
@@ -33,9 +33,11 @@
                     <th>Nome</th>
                     <th>Descrição</th>
                     <th>PVP</th>
-                    {% if is_admin %}
+                     {% if current_user.is_authentificated and current_user.is_admin() %}
                     <th>Modifica</th>
                     <th>Deleta</th>
+                    {% endif %}
+                    {% if current_user.is_authenticated %}
                     <th>Compra</th>
                      {% endif %}
                 </tr>
@@ -49,12 +51,13 @@
                     <td>{{ art.nome }}</td>
                     <td>{{art.descricao}}</td>
                     <td>{{art.preco}}</td>
-                    {% if is_admin %}
+                    {% if current_user.is_authenticated and current_user.is_admin()  %}
                         <td><a href="{{url_for('artigos_edit',id=art.id)}}"><span class="glyphicon glyphicon-pencil"></span> Modificar</a></td>
                         <td><a href="{{url_for('artigos_delete',id=art.id)}}"><span class="glyphicon glyphicon-trash"></span> Deletar</a></td>
                      {% endif %}
-                     {% if is_login %}
-                        <td><a href="#"><span class="glyphicon glyphicon-shopping-cart" ></span> Comprar</a></td>
+                     {% if current_user.is_authenticated %}
+
+                       <td><a href="{{url_for('carrinho_add',id=art.id)}}"><span class="glyphicon glyphicon-shopping-cart"></span> Comprar</a></td>
                      {% endif %}
                 </tr>
                 {% endfor %}
